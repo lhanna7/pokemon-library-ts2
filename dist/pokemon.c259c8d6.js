@@ -528,27 +528,26 @@ function hmrAcceptRun(bundle, id) {
 },{}],"7lNZF":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-const pokemon = document.querySelector("#pokemon");
 const spinner = document.querySelector(".spinner");
 const pokemonDetails = document.querySelector("#pokemon-details");
 const ul = document.querySelector("ul");
 const main = document.querySelector("main");
-function addPokemon(pokemon1) {
+function addPokemon(pokemon) {
     const div = document.createElement("div");
     div.innerHTML = `
     <figure>
-    <img src="${pokemon1.sprites.front_default}" alt="${pokemon1.name}"/>
-    <figcaption><a href="pokemon.html?pokemon=${pokemon1.name}">${pokemon1.name}</a></figcaption>
+    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    <figcaption><a href="pokemon.html?pokemon=${pokemon.name}">${pokemon.name}</a></figcaption>
     </figure>
     `;
     if (pokemonDetails !== null) pokemonDetails.append(div);
 }
-function addAbilities(pokemon2) {
+function addAbilities(pokemon) {
     const li = document.createElement("li");
     li.innerHTML = `
-    <span class="ability-name">${pokemon2.name}</span>
+    <span class="ability-name">${pokemon.name}</span>
     <br>
-    <span class="ability-short-description">${pokemon2.effect_entries[1].short_effect}</span>
+    <span class="ability-short-description">${pokemon.effect_entries[1].short_effect}</span>
     `;
     if (ul !== null) ul.append(li);
 }

@@ -1,4 +1,4 @@
-const api = "https://pokeapi.co/api/v2/pokemon/?limit=50&offset=251"
+const api = "https://pokeapi.co/api/v2/pokemon/?limit=50&offset=62"
 const spinner = document.querySelector(".spinner")
 const pokemonListing = document.querySelector("#pokemon-listing")
 

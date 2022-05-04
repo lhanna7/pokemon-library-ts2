@@ -528,7 +528,7 @@ function hmrAcceptRun(bundle, id) {
 },{}],"h7u1C":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-const api = "https://pokeapi.co/api/v2/pokemon/?limit=50&offset=251";
+const api = "https://pokeapi.co/api/v2/pokemon/?limit=50&offset=62";
 const spinner = document.querySelector(".spinner");
 const pokemonListing = document.querySelector("#pokemon-listing");
 function addPokemon(pokemon) {

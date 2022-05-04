@@ -1,4 +1,3 @@
-const pokemon = document.querySelector("#pokemon")
 const spinner = document.querySelector(".spinner")
 const pokemonDetails = document.querySelector("#pokemon-details")
 const ul = document.querySelector("ul")
