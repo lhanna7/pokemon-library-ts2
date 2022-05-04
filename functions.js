@@ -1,4 +1,3 @@
-
 const ul = document.querySelector("ul")
 const pokemonListing = document.querySelector("#pokemon-listing")
 
@@ -28,4 +27,3 @@ function addAbilities(pokemon) {
     }
 }
 
-export { addPokemon, addAbilities }

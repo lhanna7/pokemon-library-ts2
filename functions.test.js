@@ -1,5 +1,50 @@
-import { addPokemon, addAbilities } from "./functions";
+const ul = document.querySelector("ul")
+const pokemonListing = document.querySelector("#pokemon-listing")
 
-describe('addPokemon function tests' () => {
-    
+function addPokemon(pokemon) {
+    const div = document.createElement("div")
+    div.innerHTML = `
+    <figure>
+    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    <figcaption><a href="pokemon.html?pokemon=${pokemon.name}">${pokemon.name}</a></figcaption>
+    </figure>
+    `
+    if(pokemonListing !== null) {
+        pokemonListing.append(div)
+    }
+}
+
+function addAbilities(pokemon) {
+    const li = document.createElement("li")
+
+    li.innerHTML = `
+    <span class="ability-name">${pokemon.name}</span>
+    <br>
+    <span class="ability-short-description">${pokemon.effect_entries[1].short_effect}</span>
+    `
+    if(ul !== null) {
+        ul.append(li)
+    }
+}
+
+describe('addPokemon function tests', () => {
+    it('creates a div element when given pokemon information', () => {
+        const pokemon = {
+            name: {
+                front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/255.png'
+            }
+        }
+        expect(addPokemon(pokemon)).toBe(HTMLDivElement)
+    })
+})
+
+describe('addAbilities function tests', () => {
+    it('creates a li element when given pokemon information', () => {
+        const pokemon = {
+            sprites: {
+                front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/255.png'
+            }
+        }
+        expect(addPokemon(pokemon)).toBe(HTMLDivElement)
+    })
 })
