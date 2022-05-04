@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+body{
+    font-family: 'Press Start 2P', cursive;
+    margin: 0%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    line-height: 2em;
+    font-size: 16px;
+    background: url(pokemonbg.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header{
+    padding-top: 2em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    margin-bottom: 2em;
+    line-height: 4em;
+    text-align: center;
+}
+
+h1{
+    font-size: 3em;
+}
+
+h2{
+    font-size: 2em;
+    text-align: center;
+}
+
+div{
+    padding: 1.5em;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 75em;
+    justify-content: space-evenly;
+}
+
+.spinner{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    align-items: center;
+    height: 10em;
+}
+
+.hidden{
+    display: none;
+}
+
+a{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: black;
+}
+
+figcaption > a{
+    padding: .5em;
+    font-size: 2em;
+}
+
+figcaption > a:hover{
+    background-color: rgb(190, 233, 236);
+    border: 2px solid black;
+}
+
+img{
+    height: 15em;
+    width: 15em;
+}
+
+ul{
+    display: inline-block;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+li{
+    text-transform: capitalize;
+    max-width: 100em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ability-short-description{
+    margin-left: 4em;
+}
+
+.back-button{
+    margin-top: 2em;
+    font-size: 1.5em; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-button:hover{
+    background-color: rgb(190, 233, 236);
+    border: 2px solid black;
+}
