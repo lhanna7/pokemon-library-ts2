@@ -1,6 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.addPokemon = void 0;
 const api = "https://pokeapi.co/api/v2/pokemon/?limit=50&offset=251";
 const spinner = document.querySelector(".spinner");
 const pokemonListing = document.querySelector("#pokemon-listing");
@@ -16,7 +14,6 @@ function addPokemon(pokemon) {
         pokemonListing.append(div);
     }
 }
-exports.addPokemon = addPokemon;
 fetch(api)
     .then(response => {
     console.log(response);

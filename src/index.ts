@@ -41,5 +41,3 @@ fetch(api)
             addPokemon(response)
         })
     })
-
-export { addPokemon }

@@ -1,9 +1,21 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+const pokemon = document.querySelector("#pokemon");
 const spinner = document.querySelector(".spinner");
+const pokemonDetails = document.querySelector("#pokemon-details");
 const ul = document.querySelector("ul");
 const main = document.querySelector("main");
-const index_1 = require("./index");
+function addPokemon(pokemon) {
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <figure>
+    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    <figcaption><a href="pokemon.html?pokemon=${pokemon.name}">${pokemon.name}</a></figcaption>
+    </figure>
+    `;
+    if (pokemonListing !== null) {
+        pokemonListing.append(div);
+    }
+}
 function addAbilities(pokemon) {
     const li = document.createElement("li");
     li.innerHTML = `
@@ -26,7 +38,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
     .then(response => {
     return response.json();
 }).then((parsedResponse) => {
-    (0, index_1.addPokemon)(parsedResponse);
+    addPokemon(parsedResponse);
     return Promise.all(parsedResponse.abilities
         .map(parsedResponse => parsedResponse.ability.url)
         .map(url => {

@@ -1,8 +1,8 @@
+const pokemon = document.querySelector("#pokemon")
 const spinner = document.querySelector(".spinner")
+const pokemonDetails = document.querySelector("#pokemon-details")
 const ul = document.querySelector("ul")
 const main = document.querySelector("main")
-
-import { addPokemon } from "./index";
 
 
 type ChosenPokemon = {
@@ -27,7 +27,6 @@ type ChosenPokemon = {
     }[];
 }
 
-
 function addAbilities(pokemon: ChosenPokemon) {
     const li = document.createElement("li")
 
@@ -36,7 +35,7 @@ function addAbilities(pokemon: ChosenPokemon) {
     <br>
     <span class="ability-short-description">${pokemon.effect_entries[1].short_effect}</span>
     `
-    if (ul !== null) {
+    if(ul !== null) {
         ul.append(li)
     }
 }
@@ -44,7 +43,7 @@ function addAbilities(pokemon: ChosenPokemon) {
 const backButton = document.createElement("table")
 backButton.classList.add("back-button")
 backButton.innerHTML = `<a href="index.html">Back to List</a>`
-if(main !== null) {
+if(main !== null){
     main.append(backButton)
 }
 
@@ -62,7 +61,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
                 return fetch(url).then(response => response.json())
             }))
     }).then(parsedResponse => {
-        if(spinner !== null){
+        if(spinner !== null) {
             spinner.classList.add("hidden")
         }
         return parsedResponse.map(parsedResponse => {
