@@ -2,9 +2,8 @@
   "name": "pokemon-library-ts2",
   "version": "1.0.0",
   "description": "You're making a PokeDex, a list of Pokemon.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,6 +17,7 @@
   },
   "homepage": "https://github.com/lhanna7/pokemon-library-ts2#readme",
   "devDependencies": {
+    "@types/jest": "^27.5.0",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "eslint": "^8.14.0",
@@ -25,6 +25,7 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "jest": "^28.0.3"
   }
 }

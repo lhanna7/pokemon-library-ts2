@@ -41,3 +41,5 @@ fetch(api)
             addPokemon(response)
         })
     })
+
+    export default {}

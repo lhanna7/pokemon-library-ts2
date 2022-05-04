@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const api = "https://pokeapi.co/api/v2/pokemon/?limit=50&offset=251";
 const spinner = document.querySelector(".spinner");
 const pokemonListing = document.querySelector("#pokemon-listing");
@@ -29,3 +30,4 @@ fetch(api)
         addPokemon(response);
     });
 });
+exports.default = {};

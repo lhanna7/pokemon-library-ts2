@@ -27,6 +27,19 @@ type ChosenPokemon = {
     }[];
 }
 
+function addPokemon(pokemon: ChosenPokemon) {
+    const div = document.createElement("div")
+    div.innerHTML = `
+    <figure>
+    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    <figcaption><a href="pokemon.html?pokemon=${pokemon.name}">${pokemon.name}</a></figcaption>
+    </figure>
+    `
+    if (pokemonDetails !== null) {
+        pokemonDetails.append(div)
+    }
+}
+
 function addAbilities(pokemon: ChosenPokemon) {
     const li = document.createElement("li")
 
@@ -35,7 +48,7 @@ function addAbilities(pokemon: ChosenPokemon) {
     <br>
     <span class="ability-short-description">${pokemon.effect_entries[1].short_effect}</span>
     `
-    if(ul !== null) {
+    if (ul !== null) {
         ul.append(li)
     }
 }
@@ -43,7 +56,7 @@ function addAbilities(pokemon: ChosenPokemon) {
 const backButton = document.createElement("table")
 backButton.classList.add("back-button")
 backButton.innerHTML = `<a href="index.html">Back to List</a>`
-if(main !== null){
+if (main !== null) {
     main.append(backButton)
 }
 
@@ -54,17 +67,20 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
     .then(response => {
         return response.json()
     }).then((parsedResponse: ChosenPokemon) => {
+        console.log(parsedResponse)
         addPokemon(parsedResponse)
         return Promise.all(parsedResponse.abilities
             .map(parsedResponse => parsedResponse.ability.url)
             .map(url => {
                 return fetch(url).then(response => response.json())
             }))
-    }).then(parsedResponse => {
-        if(spinner !== null) {
+    }).then(parsedResponses => {
+        if (spinner !== null) {
             spinner.classList.add("hidden")
         }
-        return parsedResponse.map(parsedResponse => {
-            return addAbilities(parsedResponse)
+        parsedResponses.forEach(parsedResponse => {
+            addAbilities(parsedResponse)
         })
     })
+
+export default {}

@@ -1,9 +1,11 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const pokemon = document.querySelector("#pokemon");
 const spinner = document.querySelector(".spinner");
 const pokemonDetails = document.querySelector("#pokemon-details");
 const ul = document.querySelector("ul");
 const main = document.querySelector("main");
+const pokemonListing = document.querySelector("#pokemon-listing");
 function addPokemon(pokemon) {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -44,11 +46,12 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
         .map(url => {
         return fetch(url).then(response => response.json());
     }));
-}).then(parsedResponse => {
+}).then(parsedResponses => {
     if (spinner !== null) {
         spinner.classList.add("hidden");
     }
-    return parsedResponse.map(parsedResponse => {
-        return addAbilities(parsedResponse);
+    parsedResponses.forEach(parsedResponse => {
+        addAbilities(parsedResponse);
     });
 });
+exports.default = {};
